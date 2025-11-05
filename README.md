@@ -7,10 +7,10 @@ Once authenticated, users are directed to dashboard featuring interactive "spotl
 
 ## Screenshots
 
-<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/20c0def8-56b3-42a6-a99c-29683a650c3d" />
-<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/db629cad-e2ba-4840-9c29-1f5624075762" />
-<img width="414" height="441" alt="изображение" src="https://github.com/user-attachments/assets/d1584eaf-58ab-4982-9509-0f4979c5e81a" />
-<img width="2558" height="1311" alt="изображение" src="https://github.com/user-attachments/assets/c42f0a35-3d3b-48bb-aae1-1f54e90abe53" />
+<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/6d72224a-eaab-4abf-afe3-ae4ea4d09db5" />
+<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/8bc7f35b-3dac-4a8e-9c65-e331edb7fc2f" />
+<img width="398" height="400" alt="изображение" src="https://github.com/user-attachments/assets/288f1f13-073f-4638-a6e6-55da1156f6c6" />
+<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/9257cb60-3722-484a-89b0-d085d4de2ccb" />
 
 ---
 
@@ -30,6 +30,7 @@ Once authenticated, users are directed to dashboard featuring interactive "spotl
 - **React:** For building the user interface (with Hooks).
 - **TypeScript:** Ensures type safety across the application.
 - **Tailwind CSS:** For styling and creating the custom visual effects.
+- **shadcn ui** For elements such as card, input, label.
 - **JSON Web Token (JWT):** Used for creating secure session tokens (`jsonwebtoken` & `jose` libraries).
 
 ---
