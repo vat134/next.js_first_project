@@ -4,6 +4,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,31 +34,54 @@ export default function LoginPage() {
     };
 
     return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
-        <div className="p-8 bg-gray-800 rounded-lg shadow-lg w-full max-w-sm">
-            <h1 className="text-2xl font-bold mb-6 text-white text-center">Login</h1>
-            <form onSubmit={handleSubmit}>
-                {}
-                <div className="mb-4">
-                    <label className="block text-gray-400 mb-2" htmlFor="email">Email</label>
-                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-cyan-500" required />
-                </div>
-                <div className="mb-6">
-                    <label className="block text-gray-400 mb-2" htmlFor="password">Password</label>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-cyan-500" required />
-                </div>
-                {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-                <button type="submit" className="w-full py-2 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-all">
-                    Login
-                </button>
-            </form>
-            <p className="text-center text-gray-400 mt-4">
-                Need credentials?{' '}
-                <Link href="/register" className="text-cyan-400 hover:underline">
-                    Check here
-                </Link>
-            </p>
+    <div className="flex items-center justify-center min-h-screen">
+            <Card className="w-full max-w-sm">
+                <CardHeader className="text-center">
+                    <CardTitle className="text-xl">Login</CardTitle>
+                    <CardDescription>Enter your email and password to login.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form onSubmit={handleSubmit}>
+                        <div className="grid w-full items-center gap-4">
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="email">Email</Label>
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="test@test.com"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="password">Password</Label>
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        {error && <p className="text-destructive text-center text-sm mt-4">{error}</p>}
+
+                        <Button type="submit" className="w-full mt-6">
+                            Login
+                        </Button>
+                    </form>
+                    <p className="text-center text-sm text-muted-foreground mt-4">
+                        Need credentials?{' '}
+                        <Button variant="link" asChild className="p-0 h-auto">
+                            <Link href="/register">Check here</Link>
+                        </Button>
+                    </p>
+                </CardContent>
+            </Card>
         </div>
-    </div>
     );
 }
